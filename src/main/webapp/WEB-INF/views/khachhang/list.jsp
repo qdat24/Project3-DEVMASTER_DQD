@@ -8,76 +8,185 @@
     <title>Danh sách khách hàng</title>
     
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
-            text-align: center;
-        }
+ body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh;
+}
 
-        h2 {
-            color: #333;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        button {
-            padding: 8px 15px;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
+h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
 
-        button:hover {
-            opacity: 0.8;
-        }
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    border-radius: 3px;
+}
 
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+.actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
 
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+.home-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
 
-        th {
-            background-color: #007BFF;
-            color: white;
-        }
+.home-link:hover {
+    background-color: #eaf2fd;
+    color: #2173b9;
+    text-decoration: underline;
+}
 
-        td {
-            background-color: #fff;
-        }
+/* Button Styles */
+button {
+    padding: 10px 16px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        a button {
-            text-decoration: none;
-        }
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
-        button.add {
-            background-color: #28a745;
-            color: white;
-        }
+button:active {
+    transform: translateY(0);
+}
 
-        button.edit {
-            background-color: #ffc107;
-            color: white;
-        }
+button.add {
+    background: linear-gradient(to right, #28a745, #20c997);
+    color: white;
+    padding: 12px 20px;
+}
 
-        button.delete {
-            background-color: #dc3545;
-            color: white;
-        }
+button.edit {
+    background: linear-gradient(to right, #ffc107, #fd7e14);
+    color: white;
+}
 
-        a button:hover {
-            opacity: 0.9;
-        }
+button.delete {
+    background: linear-gradient(to right, #dc3545, #c82333);
+    color: white;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+}
+
+th {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+td {
+    font-size: 15px;
+    color: #444;
+}
+
+/* Action column */
+td:last-child {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-container {
+        overflow-x: auto;
+    }
+    
+    table {
+        min-width: 600px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    button.add {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
     </style>
 
     <script>
@@ -124,6 +233,5 @@
             </tr>
         </c:forEach>
     </table>
-            <a href="<c:url value='/' />">Về Trang Chủ</a>
-</body>
+<a href="/SpringMVCPagination/home">Về Trang Chủ</a></body>
 </html>

@@ -4,69 +4,100 @@
     <title>Thêm Khách Hàng</title>
     
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
-            text-align: center;
-        }
+  body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
 
-        h2 {
-            color: #333;
-        }
+h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
 
-        form {
-            background: white;
-            padding: 20px;
-            width: 40%;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
+form {
+  background: white;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin: 10px 0 5px;
-        }
+label {
+  font-weight: 500;
+  display: block;
+  margin: 15px 0 8px;
+  color: #555;
+  font-size: 15px;
+}
 
-        input[type="text"], input[type="email"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
 
-        input[type="submit"] {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            width: 100%;
-        }
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  outline: none;
+}
 
-        input[type="submit"]:hover {
-            background-color: #218838;
-        }
+input[type="submit"] {
+  background-color: #2ecc71;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
 
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #dc3545;
-            font-size: 16px;
-        }
+input[type="submit"]:hover {
+  background-color: #27ae60;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #e74c3c;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #c0392b;
+  text-decoration: none;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 600px) {
+  form {
+    width: 95%;
+    padding: 20px;
+  }
+}
     </style>
 </head>
 <body>

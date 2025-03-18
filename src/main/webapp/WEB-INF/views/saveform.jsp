@@ -9,77 +9,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thêm Sản Phẩm</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #e0f7fa; /* Màu xanh nhạt dịu mắt */
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    margin: 0;
+    padding: 30px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-        .container {
-            width: 50%;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
 
-        h1 {
-            font-size: 40px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #004d40;
-            background: #80cbc4;
-            padding: 20px;
-            border-radius: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #00695c;
+    padding: 18px 25px;
+    background: linear-gradient(to right, #80cbc4, #4db6ac);
+    border-radius: 12px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
 
-        table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 
-        td {
-            padding: 10px;
-            font-size: 18px;
-        }
+td {
+    padding: 12px 8px;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #00796b;
+    font-weight: 500;
+}
 
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            border: 2px solid #26a69a;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+td:first-child {
+    width: 120px;
+    text-align: right;
+    padding-right: 15px;
+}
 
-        input[type="submit"] {
-            background: #00796b;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+input[type="text"], 
+input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    background-color: #f9ffff;
+}
 
-        input[type="submit"]:hover {
-            background: #004d40;
-        }
+input[type="text"]:focus, 
+input[type="number"]:focus {
+    border-color: #26a69a;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 166, 154, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
 
-        .footer {
-            margin-top: 20px;
-            padding: 10px;
-            background: #80cbc4;
-            color: white;
-            text-align: center;
-            border-radius: 0 0 10px 10px;
-            width: 100%;
-        }
+input[type="submit"] {
+    background: linear-gradient(to right, #00796b, #00695c);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: block;
+    margin: 10px auto 0;
+    width: 80%;
+    max-width: 250px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #00695c, #004d40);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(to right, #80cbc4, #4db6ac);
+    color: #004d40;
+    text-align: center;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng bổ sung */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    right: 10px;
+    height: 10px;
+    border-radius: 10px 10px 0 0;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 22px;
+        padding: 15px;
+    }
+    
+    td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 8px 0;
+    }
+    
+    td:first-child {
+        width: 100%;
+        text-align: left;
+        padding-bottom: 5px;
+        padding-top: 15px;
+    }
+    
+    input[type="text"], 
+    input[type="number"] {
+        padding: 10px;
+    }
+    
+    input[type="submit"] {
+        width: 100%;
+    }
+}
     </style>
 </head>
 <body>

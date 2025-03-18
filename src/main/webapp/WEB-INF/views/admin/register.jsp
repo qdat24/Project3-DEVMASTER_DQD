@@ -109,5 +109,6 @@
         <p>Đã có tài khoản? <a href="login">Đăng nhập</a></p>
 <div class="footer">
         &copy; 2025 Web quản lý Hiệu thuốc tư nhân - Đinh Quốc Đạt
+        <a href="/SpringMVCPagination/home">Về Trang Chủ</a>        </div>
     </div></body>
 </html>

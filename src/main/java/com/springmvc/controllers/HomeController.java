@@ -24,7 +24,20 @@ public class HomeController {
 	
     @Autowired  
     Dqd_sanphamdao dao; // Inject UserDao for data operations
+
+    @GetMapping({"", "/SpringMVCPagination"})
+    public String redirectToHome(Model m) {
+        List<Dqd_sanpham> list = dao.getEmployees();
+        m.addAttribute("list", list);
+        return "index";
+    }
     
+    @GetMapping("/home")
+    public String getDataList(Model m) {
+        List<Dqd_sanpham> list = dao.getEmployees();
+        m.addAttribute("list", list);
+        return "index";
+    }
     @GetMapping("/giohang")
     public String showCart(HttpSession session, Model model) {
         List<Dqd_giohang> cartItems = (List<Dqd_giohang>) session.getAttribute("cartItems");
